@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
@@ -14,7 +14,6 @@ import com.example.laboratorio11.R
 import com.example.laboratorio11.RetrofitApplication
 import com.example.laboratorio11.databinding.FragmentLoginBinding
 import com.example.laboratorio11.ui.login.viewmodel.LoginViewModel
-import com.google.android.material.snackbar.Snackbar
 
 
 class LoginFragment : Fragment() {
@@ -42,6 +41,8 @@ class LoginFragment : Fragment() {
 
         setViewModel()
         observeStatus()
+        loginViewModel.clearStatus()
+        loginViewModel.clearData()
 
 
         binding.registerBtn.setOnClickListener {
@@ -79,5 +80,7 @@ class LoginFragment : Fragment() {
             handleUiStatus(status)
         }
     }
+
+
 
 }
